@@ -158,5 +158,8 @@ class OneCup
         @_add "<#{tagName} #{inter_symbol} #{attrstr.join("")}/>"
 
 # attach one cup to window so that we can use it in other modules
-window.onecup = new OneCup()
+if window?
+    window.onecup = new OneCup()
+else
+    module.exports = new OneCup()
 
